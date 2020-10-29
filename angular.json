@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-form-reactive-gimnasio"
+    }
+  },
+  "defaultProject": "angular-form-reactive-gimnasio",
+  "cli": {
+    "analytics": false
+  }
 }

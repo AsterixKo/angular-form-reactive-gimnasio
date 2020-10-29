@@ -1,0 +1,60 @@
+<h1>form-reactive works!</h1>
+
+<hr>
+
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="saveForm()">
+
+  <div class="container">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input class="form-control" type="text" placeholder="Escribe tu nombre" formControlName="nombre"
+          [class.is-invalid]="nombreInvalido">
+        <small class="form-text text-danger" *ngIf="nombreInvalido">El nombre debe tener al menos 3 letras</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input class="form-control" type="text" placeholder="Escribe tu apellido" formControlName="apellido"
+          [class.is-invalid]="apellidoInvalido">
+        <small class="form-text text-danger" *ngIf="apellidoInvalido">Indica un apellido</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Validez</label>
+        <div class="col-8">
+          <input class="form-control" type="date" placeholder="Escribe tu validez" formControlName="validez"
+            [class.is-invalid]="validezInvalido">
+          <small class="form-text text-danger" *ngIf="validezInvalido">Indica una validez</small>
+        </div>
+      </div>
+
+    <!-- formGroupName="direccion" ATENTO AL formGroupName -->
+    <div class="form-group row" formGroupName="direccion">
+      <label class="col-2 col-form-label">Dirección</label>
+      <div class="col-8">
+        <input class="form-control" type="text" placeholder="Escribe tu calle" formControlName="calle"
+          [class.is-invalid]="calleInvalido">
+      </div>
+      <div class="col-8">
+        <input class="form-control" type="text" placeholder="Escribe tu ciudad" formControlName="ciudad"
+          [class.is-invalid]="ciudadInvalido">
+      </div>
+    </div>
+
+    
+
+    <div class="form-group row">
+      <button type="submit" class="btn btn-block btn-primary">Enviar</button>
+    </div>
+  </div>
+
+</form>
+
+<div>
+  <p>{{this.forma.status}}</p>
+  <p>{{this.forma.value | json}}</p>
+</div>
