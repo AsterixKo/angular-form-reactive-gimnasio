@@ -32,6 +32,15 @@
       </div>
     </div>
 
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha de alta</label>
+        <div class="col-8">
+          <input class="form-control" type="date" placeholder="Escribe tu fecha de alta" formControlName="fechaDeAlta"
+            [class.is-invalid]="fechaDeAltaInvalido">
+          <small class="form-text text-danger" *ngIf="fechaDeAltaInvalido">Indica una fecha de alta</small>
+        </div>
+      </div>
+
     <!-- formGroupName="direccion" ATENTO AL formGroupName -->
     <div class="form-group row" formGroupName="direccion">
       <label class="col-2 col-form-label">Dirección</label>
@@ -62,9 +71,10 @@
     </div>
     <div class="card-block px-2">
       <h5 class="card-title">{{this.forma.value.nombre |capitalize}} {{this.forma.value.apellido|capitalize}}</h5>
-      <p class="card-text">{{this.forma.value.validez}}</p>
+      <p class="card-text">Validez: {{this.forma.value.validez}}</p>
       <p class="card-text">{{this.forma.value.direccion.calle|capitalize}}</p>
       <p class="card-text">{{this.forma.value.direccion.ciudad|capitalize}}</p>
+      <p class="card-text">Fecha de alta: {{this.forma.value.fechaDeAlta|date: 'dd/MM/yyyy'}}</p>
     </div>
     <div class="w-100"></div>
     <!-- <div class="card-footer w-100 text-muted">

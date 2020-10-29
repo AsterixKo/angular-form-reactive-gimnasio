@@ -10,7 +10,7 @@ export class FormReactiveComponent implements OnInit {
 
   forma: FormGroup;
 
-  constructor(private fb: FormBuilder, ) {
+  constructor(private fb: FormBuilder,) {
     this.createForm();
   }
 
@@ -39,11 +39,16 @@ export class FormReactiveComponent implements OnInit {
     return this.forma.get('validez').invalid && this.forma.get('validez').touched;
   }
 
+  get fechaDeAltaInvalido(): boolean {
+    return this.forma.get('fechaDeAlta').invalid && this.forma.get('fechaDeAlta').touched;
+  }
+
   createForm() {
     this.forma = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       apellido: ['', Validators.required],
       validez: ['', Validators.required],
+      fechaDeAlta: ['', Validators.required],
       direccion: this.fb.group({
         calle: ['', Validators.required],
         ciudad: ['', Validators.required]
@@ -63,6 +68,6 @@ export class FormReactiveComponent implements OnInit {
     // });
   }
 
- 
+
 
 }
