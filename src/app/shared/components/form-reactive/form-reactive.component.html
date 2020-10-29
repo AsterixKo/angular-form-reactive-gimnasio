@@ -24,13 +24,13 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-2 col-form-label">Validez</label>
-        <div class="col-8">
-          <input class="form-control" type="date" placeholder="Escribe tu validez" formControlName="validez"
-            [class.is-invalid]="validezInvalido">
-          <small class="form-text text-danger" *ngIf="validezInvalido">Indica una validez</small>
-        </div>
+      <label class="col-2 col-form-label">Validez</label>
+      <div class="col-8">
+        <input class="form-control" type="date" placeholder="Escribe tu validez" formControlName="validez"
+          [class.is-invalid]="validezInvalido">
+        <small class="form-text text-danger" *ngIf="validezInvalido">Indica una validez</small>
       </div>
+    </div>
 
     <!-- formGroupName="direccion" ATENTO AL formGroupName -->
     <div class="form-group row" formGroupName="direccion">
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    
+
 
     <div class="form-group row">
       <button type="submit" class="btn btn-block btn-primary">Enviar</button>
@@ -54,6 +54,24 @@
 
 </form>
 
+<div class="container">
+    <h1>Carnet:</h1>
+  <div class="card flex-row flex-wrap">
+    <div class="card-header border-0">
+      <img class="card-img-top" src="assets/image/marcial.jpg" alt="Card image cap">
+    </div>
+    <div class="card-block px-2">
+      <h5 class="card-title">{{this.forma.value.nombre}} {{this.forma.value.apellido}}</h5>
+      <p class="card-text">{{this.forma.value.validez}}</p>
+      <p class="card-text">{{this.forma.value.direccion.calle}}</p>
+      <p class="card-text">{{this.forma.value.direccion.ciudad}}</p>
+    </div>
+    <div class="w-100"></div>
+    <!-- <div class="card-footer w-100 text-muted">
+      FOOTER
+    </div> -->
+  </div>
+</div>
 <div>
   <p>{{this.forma.status}}</p>
   <p>{{this.forma.value | json}}</p>
