@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactiveComponent } from './shared/components/form-reactive/form-reactive.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormReactiveComponent
+    FormReactiveComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

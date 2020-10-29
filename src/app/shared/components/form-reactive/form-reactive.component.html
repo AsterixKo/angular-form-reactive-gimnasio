@@ -55,16 +55,16 @@
 </form>
 
 <div class="container">
-    <h1>Carnet:</h1>
+  <h1>Carnet:</h1>
   <div class="card flex-row flex-wrap">
     <div class="card-header border-0">
       <img class="card-img-top" src="assets/image/marcial.jpg" alt="Card image cap">
     </div>
     <div class="card-block px-2">
-      <h5 class="card-title">{{this.forma.value.nombre}} {{this.forma.value.apellido}}</h5>
+      <h5 class="card-title">{{this.forma.value.nombre |capitalize}} {{this.forma.value.apellido|capitalize}}</h5>
       <p class="card-text">{{this.forma.value.validez}}</p>
-      <p class="card-text">{{this.forma.value.direccion.calle}}</p>
-      <p class="card-text">{{this.forma.value.direccion.ciudad}}</p>
+      <p class="card-text">{{this.forma.value.direccion.calle|capitalize}}</p>
+      <p class="card-text">{{this.forma.value.direccion.ciudad|capitalize}}</p>
     </div>
     <div class="w-100"></div>
     <!-- <div class="card-footer w-100 text-muted">
